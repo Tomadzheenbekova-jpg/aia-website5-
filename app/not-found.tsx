@@ -1,0 +1,26 @@
+import Link from "next/link";
+import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { defaultLocale } from "@/lib/i18n/config";
+
+// Общий файл 404 для всего приложения. Next.js оборачивает его
+// в корневой app/layout.tsx (с <html>/<body>/шапкой/подвалом)
+// автоматически — здесь достаточно вернуть только содержимое.
+// params динамического сегмента [locale] сюда не приходят, поэтому
+// используем язык по умолчанию.
+export default function NotFound() {
+  const dict = getDictionary(defaultLocale);
+
+  return (
+    <div className="mx-auto flex max-w-content flex-col items-start px-6 py-24">
+      <p className="font-sans text-sm text-bordeaux">{dict.notFound.code}</p>
+      <h1 className="mt-3 font-display text-4xl text-graphite">{dict.notFound.title}</h1>
+      <p className="mt-4 max-w-md font-sans text-graphite/80">{dict.notFound.text}</p>
+      <Link
+        href={`/${defaultLocale}`}
+        className="mt-8 inline-flex items-center justify-center bg-bordeaux px-6 py-3 font-sans text-sm text-cream hover:bg-cocoa"
+      >
+        {dict.notFound.home}
+      </Link>
+    </div>
+  );
+}
