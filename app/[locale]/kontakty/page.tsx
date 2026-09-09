@@ -38,10 +38,18 @@ export default function ContactsPage({ params }: { params: { locale: string } })
           <ul className="mt-6 space-y-2">
             <li>
               {dict.contacts.phoneLabel}:{" "}
-              {contacts.phone ? (
-                <a href={`tel:${contacts.phone}`} className="text-bordeaux hover:text-cocoa">
-                  {contacts.phone}
-                </a>
+              {contacts.phones.length > 0 ? (
+                <span className="inline-flex flex-col gap-1 align-top">
+                  {contacts.phones.map((phone) => (
+                    <a
+                      key={phone.number}
+                      href={`tel:${phone.number.replace(/\D/g, "")}`}
+                      className="text-bordeaux hover:text-cocoa"
+                    >
+                      {phone.name}: {phone.number}
+                    </a>
+                  ))}
+                </span>
               ) : (
                 <span className="text-graphite/50">{dict.contacts.pending}</span>
               )}

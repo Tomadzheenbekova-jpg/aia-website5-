@@ -52,7 +52,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
             {links.telegramChannel && (
               <li><a href={links.telegramChannel} target="_blank" rel="noopener noreferrer" className="hover:text-bordeaux">{dict.footer.telegramChannel}</a></li>
             )}
-            {!contacts.phone && !contacts.email && !whatsappCis && !whatsappEurope && !links.telegramChannel && (
+            {contacts.phones.length === 0 && !contacts.email && !whatsappCis && !whatsappEurope && !links.telegramChannel && (
               <li className="text-graphite/50">{dict.footer.contactsEmpty}</li>
             )}
           </ul>
