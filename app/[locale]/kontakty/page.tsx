@@ -43,7 +43,7 @@ export default function ContactsPage({ params }: { params: { locale: string } })
                   {contacts.phones.map((phone) => (
                     <a
                       key={phone.number}
-                      href={`tel:${phone.number.replace(/\D/g, "")}`}
+                      href={`tel:${phone.number.replace(/\s/g, "")}`}
                       className="text-bordeaux hover:text-cocoa"
                     >
                       {phone.name}: {phone.number}
