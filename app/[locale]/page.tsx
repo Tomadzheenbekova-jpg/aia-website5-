@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import CategoryImage from "@/components/CategoryImage";
-import { categories } from "@/lib/categories";
+import { getCategories } from "@/lib/cms/server";
 import { siteConfig } from "@/lib/site-config";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -15,7 +15,7 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   return {
     title: dict.meta.homeTitle,
     description: dict.meta.homeDescription,
@@ -28,10 +28,11 @@ export async function generateMetadata({
   };
 }
 
-export default function HomePage({ params }: { params: { locale: string } }) {
+export default async function HomePage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   const base = `/${locale}`;
+  const categories = await getCategories();
 
   return (
     <>
