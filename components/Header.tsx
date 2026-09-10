@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Link from "next/link";
@@ -10,9 +11,11 @@ import LocaleSwitcher from "./LocaleSwitcher";
 export default function Header({
   locale,
   dict,
+  logo,
 }: {
   locale: Locale;
   dict: Dictionary;
+  logo: string;
 }) {
   const wbLink = siteConfig.links.wildberries;
   const pathname = usePathname();
@@ -32,8 +35,7 @@ export default function Header({
     <header className="border-b border-line bg-cream">
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
         <Link href={`/${locale}`} className="font-display leading-none text-graphite">
-          <span className="text-2xl tracking-tight">{siteConfig.brand.name}</span>
-          <span className="ml-2 text-2xl tracking-tight text-graphite/60">{siteConfig.brand.nameEn}</span>
+          <img src={logo} alt="АЙА — швейное производство в Кыргызстане" className="h-20 w-20 object-contain" />
         </Link>
 
         <nav className="hidden gap-7 font-sans text-sm text-graphite md:flex">

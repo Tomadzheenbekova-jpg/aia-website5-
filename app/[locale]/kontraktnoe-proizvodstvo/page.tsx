@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import { getContent } from "@/lib/cms/server";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import PlaceholderImage from "@/components/PlaceholderImage";
@@ -12,20 +14,22 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   return { title: dict.contract.title, description: dict.contract.formIntro };
 }
 
-export default function ContractProductionPage({ params }: { params: { locale: string } }) {
+export default async function ContractProductionPage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
+  const logo = (await getContent()).logos.production;
 
   return (
     <>
       <Section>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <h1 className="font-display text-4xl text-graphite">{dict.contract.title}</h1>
+            <img src={logo} alt="АЙА — производство" className="mb-6 h-36 w-36 object-contain" />
+          <h1 className="font-display text-4xl text-graphite">{dict.contract.title}</h1>
             <p className="mt-4 font-sans text-graphite/80">{siteConfig.contractProduction.direction}</p>
             <p className="mt-3 font-sans text-graphite/80">
               {dict.contract.minBatchPrefix} {siteConfig.contractProduction.minBatch} {dict.contract.minBatchSuffix}

@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import { getContent } from "@/lib/cms/server";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import CategoryImage from "@/components/CategoryImage";
@@ -10,18 +12,20 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   return { title: dict.about.title, description: dict.about.intro1 };
 }
 
-export default function AboutPage({ params }: { params: { locale: string } }) {
+export default async function AboutPage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
+  const logo = (await getContent()).logos.brand;
 
   return (
     <>
       <Section>
-        <h1 className="font-display text-4xl text-graphite">{dict.about.title}</h1>
+        <img src={logo} alt="АЙА — бренд" className="mb-6 h-36 w-36 object-contain" />
+          <h1 className="font-display text-4xl text-graphite">{dict.about.title}</h1>
         <div className="mt-8 grid gap-10 md:grid-cols-2 md:items-center">
           <div className="font-sans text-graphite/80">
             <p>{dict.about.intro1}</p>

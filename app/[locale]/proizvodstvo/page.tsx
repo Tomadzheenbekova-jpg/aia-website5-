@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import { getContent } from "@/lib/cms/server";
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import PlaceholderImage from "@/components/PlaceholderImage";
@@ -11,20 +13,22 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   return { title: dict.production.title, description: dict.production.intro };
 }
 
-export default function ProductionPage({ params }: { params: { locale: string } }) {
+export default async function ProductionPage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
+  const logo = (await getContent()).logos.production;
   const base = `/${locale}`;
   const p = dict.production;
 
   return (
     <>
       <Section>
-        <h1 className="font-display text-4xl text-graphite">{p.title}</h1>
+        <img src={logo} alt="АЙА — производство" className="mb-6 h-36 w-36 object-contain" />
+          <h1 className="font-display text-4xl text-graphite">{p.title}</h1>
         <p className="mt-4 max-w-2xl font-sans text-graphite/80">{p.intro}</p>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <PlaceholderImage label={dict.placeholders.workshop} />

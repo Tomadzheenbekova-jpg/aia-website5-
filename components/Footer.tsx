@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { siteConfig, getWhatsAppLink } from "@/lib/site-config";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
-export default function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export default function Footer({ locale, dict, logo }: { locale: Locale; dict: Dictionary; logo: string }) {
   const { brand, links, contacts } = siteConfig;
   const whatsappCis = getWhatsAppLink("cis");
   const whatsappEurope = getWhatsAppLink("europe");
@@ -12,6 +13,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
     <footer className="border-t border-line bg-sand">
       <div className="mx-auto grid max-w-content gap-10 px-6 py-14 font-sans text-sm text-graphite md:grid-cols-4">
         <div>
+          <img src={logo} alt="АЙА — производство" className="mb-3 h-24 w-24 object-contain" />
           <p className="font-display text-xl text-graphite">{brand.name}</p>
           <p className="mt-3 text-graphite/70">
             {brand.city}, {brand.country}
