@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
 
   return {
     metadataBase: new URL("https://yes-today.example"), // TODO: заменить на реальный домен после подключения
@@ -40,6 +40,6 @@ export async function generateMetadata({
 // app/layout.tsx — Next.js допускает только один такой layout).
 // Здесь остаётся только generateMetadata/generateStaticParams для
 // сегмента [locale]; шапка и подвал сайта подключены в корневом layout.
-export default function LocaleLayout({ children }: { children: React.ReactNode }) {
+export default async function LocaleLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
