@@ -1,3 +1,4 @@
+import { getContent } from "@/lib/cms/server";
 import { Fraunces, Manrope } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
@@ -29,21 +30,22 @@ const manrope = Manrope({
 // middleware.ts на основе префикса пути ("/ru/..." или "/en/...").
 // Так тег <html lang="..."> остаётся корректным для каждого языка,
 // хотя сам корневой layout физически находится выше сегмента [locale].
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const headerLocale = headers().get("x-locale");
   const locale: Locale = headerLocale && isLocale(headerLocale) ? headerLocale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
+  const content = await getContent();
 
   return (
     <html lang={locale} className={`${fraunces.variable} ${manrope.variable}`}>
       <body className="flex min-h-screen flex-col font-sans">
-        <Header locale={locale} dict={dict} />
+        <Header locale={locale} dict={dict} logo={content.logos.production} />
         <main className="flex-1">{children}</main>
-        <Footer locale={locale} dict={dict} />
+        <Footer locale={locale} dict={dict} logo={content.logos.production} />
       </body>
     </html>
   );
