@@ -1,6 +1,5 @@
-export const cmsConfigured = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+import { cmsUrl as url, cmsKey as key } from './config';
+export const cmsConfigured = Boolean(url && key);
 export async function cmsRequest(path: string, token?: string, options: RequestInit = {}) {
   if (!cmsConfigured) throw new Error('Панель ещё не подключена к хранилищу.');
   const response = await fetch(`${url}${path}`, {
