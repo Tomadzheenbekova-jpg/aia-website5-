@@ -11,13 +11,13 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   return { title: dict.contacts.title };
 }
 
-export default function ContactsPage({ params }: { params: { locale: string } }) {
+export default async function ContactsPage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   const whatsappCis = getWhatsAppLink("cis");
   const whatsappEurope = getWhatsAppLink("europe");
   const { brand, links, contacts } = siteConfig;
