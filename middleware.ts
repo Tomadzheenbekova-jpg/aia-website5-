@@ -24,6 +24,7 @@ export function middleware(request: NextRequest) {
 
   // Пропускаем статику, API-роуты и служебные файлы Next.js.
   if (
+    pathname === "/admin" || pathname.startsWith("/admin/") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/images") ||
