@@ -10,13 +10,13 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   return { title: dict.consent.title };
 }
 
-export default function ConsentPage({ params }: { params: { locale: string } }) {
+export default async function ConsentPage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   const { legal } = siteConfig;
   const c = dict.consent;
 
