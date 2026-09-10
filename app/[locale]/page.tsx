@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
           </div>
           <div className="flex flex-wrap gap-4">
             {siteConfig.links.wildberries ? (
-              <Button href={siteConfig.links.wildberries} variant="primary" external>
+              <Button href={siteConfig.links.wildberries} variant="primary" external className="shop-button">
                 {dict.home.buyOnWb}
               </Button>
             ) : (
