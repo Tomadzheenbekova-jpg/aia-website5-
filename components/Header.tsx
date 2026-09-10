@@ -47,7 +47,7 @@ export default function Header({
         </nav>
 
         <div className="hidden items-center gap-5 md:flex">
-          <LocaleSwitcher locale={locale} pathWithoutLocale={pathWithoutLocale} />
+          {!pathname.startsWith("/admin") && <LocaleSwitcher locale={locale} pathWithoutLocale={pathWithoutLocale} />}
           {wbLink ? (
             <a
               href={wbLink}
@@ -76,7 +76,7 @@ export default function Header({
             {link.label}
           </Link>
         ))}
-        <LocaleSwitcher locale={locale} pathWithoutLocale={pathWithoutLocale} />
+        {!pathname.startsWith("/admin") && <LocaleSwitcher locale={locale} pathWithoutLocale={pathWithoutLocale} />}
       </nav>
     </header>
   );
