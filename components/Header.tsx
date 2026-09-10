@@ -53,7 +53,7 @@ export default function Header({
               href={wbLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex bg-bordeaux px-5 py-2.5 font-sans text-sm text-cream hover:bg-cocoa"
+              className="shop-button inline-flex px-5 py-2.5 font-sans text-sm"
             >
               {dict.nav.wbButton}
             </a>
