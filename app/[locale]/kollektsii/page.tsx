@@ -52,7 +52,7 @@ export default async function CollectionsPage({ params }: { params: { locale: st
                 <p className="mt-3 max-w-md font-sans text-graphite/80">{catDict.description}</p>
                 <div className="mt-6 flex flex-wrap gap-4">
                   {siteConfig.links.wildberries ? (
-                    <Button href={siteConfig.links.wildberries} variant="primary" external>
+                    <Button href={siteConfig.links.wildberries} variant="primary" external className="shop-button">
                       {dict.collections.buyOnWb}
                     </Button>
                   ) : (
