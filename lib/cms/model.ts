@@ -1,3 +1,4 @@
+import { cmsUrl } from './config';
 import { categories, type Category } from '@/lib/categories';
 import ru from '@/lib/i18n/dictionaries/ru';
 import en from '@/lib/i18n/dictionaries/en';
@@ -23,7 +24,7 @@ export function imageAllowed(value: unknown): value is string {
   if (typeof value !== 'string') return false;
   if (value === '/api/logo/production' || value === '/api/logo/brand') return true;
   if (/^\/images\/[a-zA-Z0-9/_-]+\.(jpg|jpeg|png|webp)$/.test(value)) return true;
-  const base = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const base = cmsUrl;
   if (!base) return false;
   try {
     const url = new URL(value);
