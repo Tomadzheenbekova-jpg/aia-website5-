@@ -7,8 +7,8 @@ import { defaultLocale } from "@/lib/i18n/config";
 // автоматически — здесь достаточно вернуть только содержимое.
 // params динамического сегмента [locale] сюда не приходят, поэтому
 // используем язык по умолчанию.
-export default function NotFound() {
-  const dict = getDictionary(defaultLocale);
+export default async function NotFound() {
+  const dict = await getDictionary(defaultLocale);
 
   return (
     <div className="mx-auto flex max-w-content flex-col items-start px-6 py-24">
