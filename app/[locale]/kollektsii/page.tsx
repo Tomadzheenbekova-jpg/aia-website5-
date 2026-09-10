@@ -4,7 +4,7 @@ import CategoryImage from "@/components/CategoryImage";
 import DetailGallery from "@/components/DetailGallery";
 import Button from "@/components/Button";
 import OrderForm from "@/components/OrderForm";
-import { categories } from "@/lib/categories";
+import { getCategories } from "@/lib/cms/server";
 import { siteConfig } from "@/lib/site-config";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -15,13 +15,14 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   return { title: dict.collections.title, description: dict.collections.intro };
 }
 
-export default function CollectionsPage({ params }: { params: { locale: string } }) {
+export default async function CollectionsPage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
+  const categories = await getCategories();
 
   return (
     <>
