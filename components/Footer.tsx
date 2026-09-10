@@ -67,7 +67,7 @@ export default function Footer({ locale, dict, logo }: { locale: Locale; dict: D
               href={links.wildberries}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-bordeaux px-4 py-2 text-cream hover:bg-cocoa"
+              className="shop-button inline-block px-4 py-2"
             >
               {dict.nav.wbButton}
             </a>
