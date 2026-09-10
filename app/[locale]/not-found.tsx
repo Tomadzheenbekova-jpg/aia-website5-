@@ -4,8 +4,8 @@ import { defaultLocale } from "@/lib/i18n/config";
 
 // Файл not-found.tsx в App Router не получает params динамического
 // сегмента, поэтому используем язык по умолчанию.
-export default function NotFound() {
-  const dict = getDictionary(defaultLocale);
+export default async function NotFound() {
+  const dict = await getDictionary(defaultLocale);
 
   return (
     <div className="mx-auto flex max-w-content flex-col items-start px-6 py-24">
