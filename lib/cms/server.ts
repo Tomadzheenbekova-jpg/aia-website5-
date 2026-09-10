@@ -1,9 +1,8 @@
+import { cmsUrl as url, cmsKey as key } from './config';
 import 'server-only';
 import { cache } from 'react';
 import { defaultContent, normalizeContent } from './model';
 export const getContent = cache(async () => {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return defaultContent;
   try {
     const response = await fetch(`${url}/rest/v1/aia_content?id=eq.1&select=data`, {
