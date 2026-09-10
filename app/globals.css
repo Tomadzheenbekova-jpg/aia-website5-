@@ -29,3 +29,7 @@ select:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* Store buttons match the supplied AYA BRAND logo. */
+.shop-button { background-color: #323031; color: #efefef; }
+.shop-button:hover { background-color: #242324; color: #ffffff; }
