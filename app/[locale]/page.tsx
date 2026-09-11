@@ -105,43 +105,43 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </div>
         <div className="mt-10 grid grid-cols-3 gap-3 md:grid-cols-6">
           <CategoryImage
-            src="/images/categories/kapsula-02.jpg"
-            alt={dict.categories.kurtki.title}
+            src="/images/collections/capsule-denim.jpg"
+            alt={dict.home.capsuleTitle}
             placeholderLabel={dict.placeholders.onModel}
             aspect="aspect-[3/4]"
             sizes="(min-width: 768px) 16vw, 33vw"
           />
           <CategoryImage
-            src="/images/categories/kapsula-03.jpg"
-            alt={dict.categories.zhilety.title}
+            src="/images/collections/shirt-denim-black.jpg"
+            alt={dict.home.capsuleTitle}
             placeholderLabel={dict.placeholders.onModel}
             aspect="aspect-[3/4]"
             sizes="(min-width: 768px) 16vw, 33vw"
           />
           <CategoryImage
-            src="/images/categories/kapsula-06.jpg"
-            alt={dict.categories.zhilety.title}
+            src="/images/collections/shirt-red-set.jpg"
+            alt={dict.home.capsuleTitle}
             placeholderLabel={dict.placeholders.onModel}
             aspect="aspect-[3/4]"
             sizes="(min-width: 768px) 16vw, 33vw"
           />
           <CategoryImage
-            src="/images/categories/zhilety-07.jpg"
-            alt={dict.categories.zhilety.title}
+            src="/images/collections/vest-black.jpg"
+            alt={dict.home.capsuleTitle}
             placeholderLabel={dict.placeholders.onModel}
             aspect="aspect-[3/4]"
             sizes="(min-width: 768px) 16vw, 33vw"
           />
           <CategoryImage
-            src="/images/categories/kapsula-07.jpg"
-            alt={dict.categories.rubashki.title}
+            src="/images/collections/palazzo-blue.jpg"
+            alt={dict.home.capsuleTitle}
             placeholderLabel={dict.placeholders.onModel}
             aspect="aspect-[3/4]"
             sizes="(min-width: 768px) 16vw, 33vw"
           />
           <CategoryImage
-            src="/images/categories/rubashki-01.jpg"
-            alt={dict.categories.rubashki.title}
+            src="/images/collections/dress-burgundy.jpg"
+            alt={dict.home.capsuleTitle}
             placeholderLabel={dict.placeholders.onModel}
             aspect="aspect-[3/4]"
             sizes="(min-width: 768px) 16vw, 33vw"

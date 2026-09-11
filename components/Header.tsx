@@ -33,11 +33,21 @@ export default function Header({
 
   return (
     <header className="border-b border-line bg-cream">
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
-        <Link href={`/${locale}`} className="font-display leading-none text-graphite">
-          <img src={logo} alt="АЙА — швейное производство в Кыргызстане" className="h-20 w-20 object-contain" />
+      <div className="border-b border-line bg-graphite">
+        <Link
+          href={`/${locale}`}
+          className="mx-auto flex h-28 max-w-content items-center justify-center px-6 md:h-36"
+          aria-label="АЙА — на главную"
+        >
+          <img
+            src={logo}
+            alt="АЙА — швейное производство в Кыргызстане"
+            className="h-24 w-auto object-contain md:h-32"
+          />
         </Link>
+      </div>
 
+      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
         <nav className="hidden gap-7 font-sans text-sm text-graphite md:flex">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-bordeaux">

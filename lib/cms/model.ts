@@ -42,8 +42,10 @@ export function normalizeContent(raw: unknown): Content {
   out.categories = categories.map(base => {
     const entry = Array.isArray(data.categories) ? data.categories.find(c => c?.slug === base.slug) : undefined;
     if (!entry) return base;
-    return { ...base, image: entry.image === null ? null : imageAllowed(entry.image) ? entry.image : base.image,
-      gallery: Array.isArray(entry.gallery) ? entry.gallery.filter(imageAllowed).slice(0, 30) : base.gallery };
+    const savedGallery = Array.isArray(entry.gallery) ? entry.gallery.filter(imageAllowed) : [];
+    const gallery = [...new Set([...(base.gallery ?? []), ...savedGallery])].slice(0, 30);
+    return { ...base, image: entry.image === null ? base.image : imageAllowed(entry.image) ? entry.image : base.image,
+      gallery: gallery.length ? gallery : undefined };
   });
   for (const locale of ['ru', 'en'] as const) {
     for (const [path, value] of Object.entries(data.texts?.[locale] ?? {})) {

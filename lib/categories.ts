@@ -42,14 +42,26 @@ export const categories: Category[] = [
   },
   {
     slug: "palazzo",
-    image: "/images/categories/palazzo-01.jpg",
-    gallery: ["/images/categories/palazzo-02.jpg"],
+    image: "/images/collections/palazzo-blue.jpg",
+    gallery: [
+      "/images/categories/palazzo-01.jpg",
+      "/images/categories/palazzo-02.jpg",
+      "/images/collections/palazzo-red-front.jpg",
+      "/images/collections/palazzo-red-back.jpg",
+      "/images/collections/palazzo-red-fastener.jpg",
+    ],
     placeholderKind: "onModel",
   },
   {
     slug: "rubashki",
-    image: "/images/categories/rubashki-01.jpg",
+    image: "/images/collections/shirt-blue-clean.jpg",
     gallery: [
+      "/images/collections/shirt-black-collage.jpg",
+      "/images/collections/shirt-denim-black.jpg",
+      "/images/collections/shirt-denim-blue-details.jpg",
+      "/images/collections/shirt-blue-card.jpg",
+      "/images/collections/shirt-red.jpg",
+      "/images/collections/shirt-red-set.jpg",
       "/images/categories/rubashki-02.jpg",
       "/images/categories/rubashki-03.jpg",
       "/images/categories/rubashki-04.jpg",
@@ -58,7 +70,8 @@ export const categories: Category[] = [
   },
   {
     slug: "bluzki",
-    image: null,
+    image: "/images/collections/blouse-black.jpg",
+    gallery: ["/images/collections/blouse-polka-dot.jpg"],
     placeholderKind: "onModel",
   },
   {
@@ -68,8 +81,12 @@ export const categories: Category[] = [
   },
   {
     slug: "zhilety",
-    image: "/images/categories/zhilety-01.jpg",
+    image: "/images/collections/vest-black.jpg",
     gallery: [
+      "/images/collections/vest-black-detail.jpg",
+      "/images/collections/vest-red.jpg",
+      "/images/collections/vest-plus-size.jpg",
+      "/images/collections/vest-black-card.jpg",
       "/images/categories/zhilety-02.jpg",
       "/images/categories/zhilety-03.jpg",
       "/images/categories/zhilety-04.jpg",
@@ -83,7 +100,7 @@ export const categories: Category[] = [
   },
   {
     slug: "platya",
-    image: "/images/categories/platya-01.jpg",
+    image: "/images/collections/dress-burgundy.jpg",
     gallery: [
       "/images/categories/platya-02.jpg",
       "/images/categories/platya-03.jpg",
@@ -96,7 +113,7 @@ export const categories: Category[] = [
   },
   {
     slug: "zhakety",
-    image: null,
+    image: "/images/collections/vest-plus-size.jpg",
     placeholderKind: "finished",
   },
   {
