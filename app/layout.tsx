@@ -43,7 +43,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={`${fraunces.variable} ${manrope.variable}`}>
       <body className="flex min-h-screen flex-col font-sans">
-        <Header locale={locale} dict={dict} logo={content.logos.production} />
+        <Header locale={locale} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} logo={content.logos.production} />
       </body>

@@ -11,11 +11,9 @@ import LocaleSwitcher from "./LocaleSwitcher";
 export default function Header({
   locale,
   dict,
-  logo,
 }: {
   locale: Locale;
   dict: Dictionary;
-  logo: string;
 }) {
   const wbLink = siteConfig.links.wildberries;
   const pathname = usePathname();
@@ -36,14 +34,13 @@ export default function Header({
       <div className="border-b border-line bg-graphite">
         <Link
           href={`/${locale}`}
-          className="mx-auto flex h-28 max-w-content items-center justify-center px-6 md:h-36"
+          className="mx-auto flex h-28 max-w-content flex-col items-center justify-center px-6 text-center text-cream md:h-36"
           aria-label="АЙА — на главную"
         >
-          <img
-            src={logo}
-            alt="АЙА — швейное производство в Кыргызстане"
-            className="h-24 w-auto object-contain md:h-32"
-          />
+          <span className="font-display text-5xl tracking-[0.3em] md:text-7xl md:tracking-[0.45em]">AYA</span>
+          <span className="mt-2 font-sans text-[10px] tracking-[0.35em] text-cream/80 md:text-xs md:tracking-[0.55em]">
+            MADE IN KYRGYZSTAN
+          </span>
         </Link>
       </div>
 

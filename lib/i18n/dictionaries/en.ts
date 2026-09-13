@@ -49,7 +49,7 @@ const en: Dictionary = {
     },
     bluzki: {
       title: "Blouses",
-      description: "Lightweight blouses for everyday and dressier looks.",
+      description: "Relaxed short-sleeve blouses in solid colours and printed designs.",
     },
     yubki: {
       title: "Skirts",
@@ -61,7 +61,7 @@ const en: Dictionary = {
     },
     platya: {
       title: "Dresses",
-      description: "Dresses for everyday life, work and special occasions, including plus-size fits.",
+      description: "Midi and maxi dresses in relaxed and fitted silhouettes for everyday and special occasions.",
     },
     zhakety: {
       title: "Jackets & blazers",
@@ -69,7 +69,7 @@ const en: Dictionary = {
     },
     kurtki: {
       title: "Outerwear",
-      description: "Bomber jackets and outerwear made in-house.",
+      description: "Denim bomber jackets with knitted trim at the collar, cuffs and hem.",
     },
   },
   home: {
