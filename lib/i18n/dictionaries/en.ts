@@ -98,7 +98,7 @@ const en: Dictionary = {
     productionCta: "More about our production →",
     contractTitle: "Contract manufacturing",
     contractText:
-      "Production of a wide range of women's garments. Minimum order — from 300 units. A good fit for other brands and sellers who need a reliable factory.",
+      "Production of a wide range of women's garments. Minimum order — from 150 units. A good fit for other brands and sellers who need a reliable factory.",
     contractCta: "Send a request",
     whereToBuyTitle: "Where to buy",
     whereToBuyText: "Retail purchases — on Wildberries or directly through this site.",

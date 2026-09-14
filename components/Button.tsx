@@ -19,8 +19,8 @@ export default function Button({
   const base =
     "inline-flex items-center justify-center px-6 py-3 font-sans text-sm transition-colors";
   const variants: Record<string, string> = {
-    primary: "bg-bordeaux text-cream hover:bg-cocoa",
-    secondary: "border border-graphite text-graphite hover:bg-graphite hover:text-cream",
+    primary: "bg-bordeaux text-cream hover:bg-bordeaux-dark",
+    secondary: "border border-bordeaux text-bordeaux hover:bg-bordeaux hover:text-cream",
     ghost: "text-bordeaux hover:text-cocoa underline underline-offset-4",
   };
 

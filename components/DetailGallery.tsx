@@ -13,7 +13,7 @@ export default function DetailGallery({ images, altPrefix }: DetailGalleryProps)
   return (
     <div className="mt-4 grid grid-cols-3 gap-3">
       {images.map((src, i) => (
-        <div key={src} className="relative aspect-square overflow-hidden bg-sand">
+        <div key={src} className="photo-frame relative aspect-square overflow-hidden bg-sand">
           <Image
             src={src}
             alt={`${altPrefix} — деталь ${i + 1}`}

@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
 }
 
 body {
@@ -30,6 +31,10 @@ select:focus-visible {
   }
 }
 
-/* Store buttons match the supplied AYA BRAND logo. */
-.shop-button { background-color: #323031; color: #efefef; }
-.shop-button:hover { background-color: #242324; color: #ffffff; }
+/* Единый бордовый цвет баннера и кнопок магазина. */
+.shop-button { background-color: #940d35; color: #f6f2ea; transition: background-color 200ms ease; }
+.shop-button:hover { background-color: #700a28; color: #ffffff; }
+.photo-frame img { transition: transform 650ms ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .photo-frame:hover img { transform: scale(1.045); }
+}

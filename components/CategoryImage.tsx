@@ -26,7 +26,7 @@ export default function CategoryImage({
   }
 
   return (
-    <div className={`relative ${aspect} overflow-hidden bg-sand`}>
+    <div className={`photo-frame relative ${aspect} overflow-hidden bg-sand`}>
       <Image
         src={src}
         alt={alt}

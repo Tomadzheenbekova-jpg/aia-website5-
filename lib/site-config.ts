@@ -44,7 +44,7 @@ export const siteConfig = {
 
   // Условия контрактного производства, которые можно открыто публиковать.
   contractProduction: {
-    minBatch: 300,
+    minBatch: 150,
     direction: "Производство женских изделий широкого спектра",
   },
 

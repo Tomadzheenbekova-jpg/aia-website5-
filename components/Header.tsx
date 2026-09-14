@@ -30,8 +30,8 @@ export default function Header({
   ];
 
   return (
-    <header className="border-b border-line bg-cream">
-      <div className="border-b border-line bg-graphite">
+    <header className="sticky -top-28 z-40 border-b border-line bg-cream shadow-sm md:-top-36">
+      <div className="h-28 bg-bordeaux md:h-36">
         <Link
           href={`/${locale}`}
           className="mx-auto flex h-28 max-w-content flex-col items-center justify-center px-6 text-center text-cream md:h-36"
@@ -44,8 +44,8 @@ export default function Header({
         </Link>
       </div>
 
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5">
-        <nav className="hidden gap-7 font-sans text-sm text-graphite md:flex">
+      <div className="mx-auto hidden max-w-content items-center justify-between gap-5 px-6 py-5 md:flex">
+        <nav className="flex flex-wrap gap-x-7 gap-y-2 font-sans text-sm text-graphite">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-bordeaux">
               {link.label}

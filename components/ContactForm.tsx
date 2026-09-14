@@ -108,7 +108,7 @@ export default function ContactForm({ locale, dict }: { locale: Locale; dict: Di
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-2 inline-flex w-fit items-center justify-center bg-bordeaux px-6 py-3 font-sans text-sm text-cream hover:bg-cocoa disabled:opacity-60"
+        className="mt-2 inline-flex w-fit items-center justify-center bg-bordeaux px-6 py-3 font-sans text-sm text-cream hover:bg-bordeaux-dark disabled:opacity-60"
       >
         {status === "submitting" ? t.submitting : t.submit}
       </button>

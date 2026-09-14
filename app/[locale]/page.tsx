@@ -72,10 +72,10 @@ export default async function HomePage({ params }: { params: { locale: string } 
             {dict.home.allCollections}
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
           {[...categories]
             .sort((a, b) => Number(b.image !== null) - Number(a.image !== null))
-            .slice(0, 4)
+            .filter(cat => ["bryuki", "palazzo", "rubashki", "bluzki", "platya", "kurtki"].includes(cat.slug))
             .map((cat) => (
             <Link key={cat.slug} href={`${base}/kollektsii#${cat.slug}`} className="group">
               <CategoryImage
@@ -83,7 +83,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 alt={dict.categories[cat.slug].title}
                 placeholderLabel={dict.placeholders[cat.placeholderKind]}
                 aspect="aspect-[3/4]"
-                sizes="(min-width: 768px) 25vw, 50vw"
+                sizes="(min-width: 768px) 33vw, 50vw"
               />
               <p className="mt-3 font-sans text-sm text-graphite group-hover:text-bordeaux">
                 {dict.categories[cat.slug].title}
