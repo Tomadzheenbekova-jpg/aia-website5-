@@ -53,7 +53,7 @@ const en: Dictionary = {
     },
     yubki: {
       title: "Skirts",
-      description: "Skirts in various lengths and silhouettes.",
+      description: "Skirts in various lengths and silhouettes, including skorts.",
     },
     zhilety: {
       title: "Vests",
@@ -65,7 +65,7 @@ const en: Dictionary = {
     },
     zhakety: {
       title: "Jackets & blazers",
-      description: "Blazers for work and everyday wear.",
+      description: "Jackets, bombers and blazers for everyday and work looks.",
     },
     kurtki: {
       title: "Outerwear",

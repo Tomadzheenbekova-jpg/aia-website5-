@@ -75,7 +75,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
           {[...categories]
             .sort((a, b) => Number(b.image !== null) - Number(a.image !== null))
-            .filter(cat => ["bryuki", "palazzo", "rubashki", "bluzki", "platya", "kurtki"].includes(cat.slug))
+            .filter(cat => ["bryuki", "palazzo", "rubashki", "bluzki", "platya", "zhakety"].includes(cat.slug))
             .map((cat) => (
             <Link key={cat.slug} href={`${base}/kollektsii#${cat.slug}`} className="group">
               <CategoryImage

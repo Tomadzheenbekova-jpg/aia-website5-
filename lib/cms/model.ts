@@ -1,5 +1,5 @@
 import { cmsUrl } from './config';
-import { categories, type Category } from '@/lib/categories';
+import { categories, excludedCategoryImages, type Category } from '@/lib/categories';
 import ru from '@/lib/i18n/dictionaries/ru';
 import en from '@/lib/i18n/dictionaries/en';
 
@@ -39,13 +39,21 @@ export function normalizeContent(raw: unknown): Content {
     const url = data.logos?.[key];
     if (imageAllowed(url)) out.logos[key] = url;
   }
+  const savedCategories = Array.isArray(data.categories) ? data.categories : [];
   out.categories = categories.map(base => {
-    const entry = Array.isArray(data.categories) ? data.categories.find(c => c?.slug === base.slug) : undefined;
-    if (!entry) return base;
-    const savedGallery = Array.isArray(entry.gallery) ? entry.gallery.filter(imageAllowed) : [];
-    const gallery = [...new Set([...(base.gallery ?? []), ...savedGallery])].slice(0, 30);
-    return { ...base, image: entry.image === null ? base.image : imageAllowed(entry.image) ? entry.image : base.image,
-      gallery: gallery.length ? gallery : undefined };
+    const entry = savedCategories.find(c => c?.slug === base.slug);
+    const legacy = base.slug === 'zhakety' ? savedCategories.find(c => c?.slug === 'kurtki') : undefined;
+    const excluded = new Set(excludedCategoryImages[base.slug] ?? []);
+    const allowed = (url: unknown): url is string => imageAllowed(url) && !excluded.has(url);
+    const savedImage = entry?.image;
+    const image = allowed(savedImage) ? savedImage : base.image;
+    const savedGallery = Array.isArray(entry?.gallery) ? entry.gallery.filter(allowed) : [];
+    const legacyGallery = Array.isArray(legacy?.gallery) ? legacy.gallery.filter(allowed) : [];
+    const legacyImage = legacy?.image;
+    if (allowed(legacyImage)) legacyGallery.unshift(legacyImage);
+    const gallery = [...new Set([...(base.gallery ?? []), ...savedGallery, ...legacyGallery])]
+      .filter(url => allowed(url) && url !== image).slice(0, 30);
+    return { ...base, image, gallery: gallery.length ? gallery : undefined };
   });
   for (const locale of ['ru', 'en'] as const) {
     for (const [path, value] of Object.entries(data.texts?.[locale] ?? {})) {
