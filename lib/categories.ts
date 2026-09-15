@@ -58,7 +58,11 @@ export const categories: Category[] = [
       "/images/categories/bryuki-06.jpg",
       "/images/categories/bryuki-07.jpg",
       "/images/collections/trousers-black-card.webp",
-      "/images/collections/trousers-red-plus.webp"
+      "/images/collections/trousers-red-plus.webp",
+      "/images/collections/trousers-red-elastic-collage.webp",
+      "/images/collections/trousers-red-length.webp",
+      "/images/collections/trousers-red-waist.webp",
+      "/images/collections/trousers-size-chart.webp"
     ],
     "placeholderKind": "finished"
   },
@@ -71,7 +75,12 @@ export const categories: Category[] = [
       "/images/collections/palazzo-red-front.jpg",
       "/images/collections/palazzo-red-back.jpg",
       "/images/collections/palazzo-red-fastener.jpg",
-      "/images/collections/palazzo-red-plus.webp"
+      "/images/collections/palazzo-red-plus.webp",
+      "/images/collections/palazzo-denim-styling.webp",
+      "/images/collections/palazzo-denim-navy.webp",
+      "/images/collections/palazzo-denim-pockets.webp",
+      "/images/collections/palazzo-denim-velcro-card.webp",
+      "/images/collections/palazzo-black-lace.webp"
     ],
     "placeholderKind": "onModel"
   },
@@ -88,7 +97,10 @@ export const categories: Category[] = [
       "/images/categories/rubashki-02.jpg",
       "/images/categories/rubashki-03.jpg",
       "/images/categories/rubashki-04.jpg",
-      "/images/collections/shirt-white-collage.webp"
+      "/images/collections/shirt-white-collage.webp",
+      "/images/collections/shirt-denim-grey-back.webp",
+      "/images/collections/shirt-white-skirt-outfit.webp",
+      "/images/collections/shirt-white-trousers-outfit.webp"
     ],
     "placeholderKind": "finished"
   },
@@ -98,7 +110,9 @@ export const categories: Category[] = [
     "gallery": [
       "/images/collections/blouse-polka-dot.jpg",
       "/images/collections/blouse-white-look.webp",
-      "/images/collections/blouse-polka-dot-card.webp"
+      "/images/collections/blouse-polka-dot-card.webp",
+      "/images/collections/blouse-brown-card.webp",
+      "/images/collections/blouse-red.webp"
     ],
     "placeholderKind": "onModel"
   },
@@ -110,7 +124,9 @@ export const categories: Category[] = [
       "/images/collections/shorts-black.webp",
       "/images/collections/shirt-white-look.webp",
       "/images/collections/vest-black-look.webp",
-      "/images/collections/jacket-grey-look.webp"
+      "/images/collections/jacket-grey-look.webp",
+      "/images/collections/skirt-grey-back.webp",
+      "/images/collections/skirt-berry.webp"
     ],
     "placeholderKind": "finished"
   },
@@ -145,7 +161,8 @@ export const categories: Category[] = [
       "/images/categories/platya-07.jpg",
       "/images/collections/dress-lace-black.webp",
       "/images/collections/dress-cutout-black.webp",
-      "/images/collections/dress-ribbed-black.webp"
+      "/images/collections/dress-ribbed-black.webp",
+      "/images/collections/dress-red.webp"
     ],
     "placeholderKind": "onModel"
   },
@@ -162,7 +179,8 @@ export const categories: Category[] = [
       "/images/categories/kurtki-07.jpg",
       "/images/categories/kurtki-08.jpg",
       "/images/collections/bomber-blue-card.webp",
-      "/images/collections/bomber-black-card.webp"
+      "/images/collections/bomber-black-card.webp",
+      "/images/collections/jacket-denim-full-look.webp"
     ],
     "placeholderKind": "finished"
   }

@@ -41,7 +41,7 @@ const en: Dictionary = {
     },
     palazzo: {
       title: "Wide-leg & palazzo trousers",
-      description: "A loose cut for everyday and office looks.",
+      description: "Wide-leg and palazzo trousers in relaxed cuts, including knitted denim styles.",
     },
     rubashki: {
       title: "Shirts",
